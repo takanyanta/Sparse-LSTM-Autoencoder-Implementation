@@ -20,7 +20,8 @@ Using LSTM autoencoder, L1 Regularization
    * Reshape the 2. output
 
 * Structure of Layers
- * Standard RNN EncoderDecoder
+   * Standard RNN EncoderDecoder
+ 
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
 | 1 | LSTM | (None, l, k) | (None, h) |
@@ -28,8 +29,8 @@ Using LSTM autoencoder, L1 Regularization
 | 3 | LSTM | (None, l, h) | (None, l, h) |
 | 4 | TimeDistributed | (None, l, h) | (None, l ,k) |
 
- * Sparse RNN Encoder-Decoder
-
+   * Sparse RNN Encoder-Decoder
+   
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
 | 1 | Flatten | (None, l, k)| (None, l&times;k) |
