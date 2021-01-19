@@ -13,7 +13,7 @@ Using LSTM autoencoder, L1 Regularization
 * For the implementation, tensorflow and keras are used.
 * The procudure is as below
   * Flatten the input
-  * Insert the custom layer
+  * Insert the custom layer(with L1 regularization)
   * Reshape the 2. output
 
 ## Results
