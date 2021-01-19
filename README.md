@@ -11,7 +11,10 @@ Using LSTM autoencoder, L1 Regularization
 ## Algorithm and How to implement
 
 * For the implementation, tensorflow and keras are used.
-* First, 
+* The procudure is as below
+ 1. Flatten the input
+ 2. Insert the custom layer
+ 3. Reshape the 2. output
 
 ## Results
 
