@@ -16,6 +16,8 @@ Using LSTM autoencoder, L1 Regularization
 
 ### Structure of layers
 
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/SeriesLengthData.png "process1")
+
 * At first, define "Standard RNN EncoderDecoder", then define "Sparse RNN Encoder-Decoder".
 * Sparse RNN Encoder-Decoder is built by adding some changes to Standard RNN EncoderDecoder as below;
    * Flatten the input
