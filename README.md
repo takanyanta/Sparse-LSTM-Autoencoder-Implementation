@@ -13,6 +13,9 @@ Using LSTM autoencoder, L1 Regularization
 ## Algorithm and How to implement
 
 * For the implementation, tensorflow and keras are used.
+
+### Structure of layers
+
 * At first, define "Standard RNN EncoderDecoder", then define "Sparse RNN Encoder-Decoder".
 * Sparse RNN Encoder-Decoder is built by adding some changes to Standard RNN EncoderDecoder as below;
    * Flatten the input
