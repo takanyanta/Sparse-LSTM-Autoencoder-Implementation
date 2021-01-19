@@ -15,12 +15,12 @@ Using LSTM autoencoder, L1 Regularization
 * For the implementation, tensorflow and keras are used.
 * At first, define "Standard RNN EncoderDecoder", then define "Sparse RNN Encoder-Decoder".
 * Sparse RNN Encoder-Decoder is built by adding some changes to Standard RNN EncoderDecoder as below;
-  * Flatten the input
-  * Insert the custom layer(with L1 regularization)
-  * Reshape the 2. output
+   * Flatten the input
+   * Insert the custom layer(with L1 regularization)
+   * Reshape the 2. output
 
-* Structure of Standard RNN EncoderDecoder
-
+* Structure of Layers
+ * Standard RNN EncoderDecoder
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
 | 1 | LSTM | (None, l, k) | (None, h) |
@@ -28,7 +28,7 @@ Using LSTM autoencoder, L1 Regularization
 | 3 | LSTM | (None, l, h) | (None, l, h) |
 | 4 | TimeDistributed | (None, l, h) | (None, l ,k) |
 
-* Structure of Sparse RNN Encoder-Decoder
+ * Sparse RNN Encoder-Decoder
 
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
