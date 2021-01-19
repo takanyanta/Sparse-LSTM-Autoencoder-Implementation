@@ -19,8 +19,7 @@ Using LSTM autoencoder, L1 Regularization
    * Insert the custom layer(with L1 regularization)
    * Reshape the 2. output
 
-* Structure of Layers
-   * Standard RNN EncoderDecoder
+* Structure of Standard RNN EncoderDecoder
  
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
@@ -28,7 +27,7 @@ Using LSTM autoencoder, L1 Regularization
 | 2 | RepeatVector | (None, h) | (None, l, h) |
 | 3 | LSTM | (None, l, h) | (None, l, h) |
 | 4 | TimeDistributed | (None, l, h) | (None, l ,k) |
-   * Sparse RNN Encoder-Decoder
+* Structure of Sparse RNN Encoder-Decoder
    
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
