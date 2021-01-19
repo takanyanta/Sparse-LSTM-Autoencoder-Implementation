@@ -28,7 +28,6 @@ Using LSTM autoencoder, L1 Regularization
 | 2 | RepeatVector | (None, h) | (None, l, h) |
 | 3 | LSTM | (None, l, h) | (None, l, h) |
 | 4 | TimeDistributed | (None, l, h) | (None, l ,k) |
-
    * Sparse RNN Encoder-Decoder
    
 | Seq | Layer | Input Shape | Output Shape |
