@@ -119,6 +119,30 @@ def Sparse_LSTM(X):
 
 * Create train data with former 10,000 records, and define latter 5,000 records as test data.
 
+* How to plot Learning history
+```python
+    def plotting_history(self, history):
+        self.history = history
+        plt.figure(figsize=(4, 4))
+        plt.plot(self.history.history['loss'], label='Training Loss')
+        plt.plot(self.history.history['val_loss'], label='Validation Loss')
+        plt.xlabel("Epochs")
+        plt.ylabel("loss")
+        plt.legend()
+        plt.show()
+```
+
+* How to compute Mahalanobis Distance
+```python
+def compute_mahalanobis(model, X_train, X_test):
+    train_error = model.predict(X_train) - X_train
+    cov = np.cov(train_error.reshape(-1, X_train.shape[-1]).T)
+    mean = np.mean(train_error.reshape(-1, X_train.shape[-1]), axis=0)
+    test_error = model.predict(X_test) - X_test
+    temp_reshape = test_error.reshape(-1, test_error.shape[-1])
+    return np.mean(np.array([distance.mahalanobis(mean, temp_reshape[i], cov) for i in range(len(temp_reshape))]).reshape(-1, X_train.shape[1]), axis=1)
+```
+
 ### Standard RNN EncoderDecoder
 
 #### Case(1)
