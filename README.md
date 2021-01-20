@@ -144,6 +144,7 @@ def compute_mahalanobis(model, X_train, X_test):
 ```
 
 * Relu Output of Sparse RNN(Sample)
+
 partial input equal to zero
 
 ![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/Activate.png "process1")
