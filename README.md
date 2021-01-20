@@ -131,6 +131,9 @@ def Sparse_LSTM(X):
         plt.legend()
         plt.show()
 ```
+* Sample of the Relu Output of Sparse RNN
+
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/Activate.png "process1")
 
 * How to compute Mahalanobis Distance
 ```python
@@ -175,6 +178,4 @@ def compute_mahalanobis(model, X_train, X_test):
 
 * Both results are almost same. But in Case(2), Standard RNN could not capture the F1 acsending trend(seen in Case(1)), which is caused by sine wave.
 * Sparse RNN seems to be able to capture above trend, so it might have the ability to eliminate the effect of strong correlation among features to some extent.
-
-(https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/Activate.png "process1")|
 * Sparse RNN seems that it could not learn well at first, so it should be noted that the patience of EarlyStopping has to be set as a somewhat higher number.
