@@ -109,7 +109,9 @@ def Sparse_LSTM(X):
 
 ## Results
 
-* Assume that there are two types of data, the one is sine 
+* Assume that there are two types of data, the one is sine wave with noise(F1), and the other is normal random number with noise(F2).
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/sine_normal.png "process1")
+* Assume two case, (1)[F1, F2], (2)[F1, F2, F2, F2, F2]
 
 ### Standard RNN EncoderDecoder
 
