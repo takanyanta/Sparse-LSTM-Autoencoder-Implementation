@@ -109,7 +109,11 @@ def Sparse_LSTM(X):
 
 ## Results
 
+* Assume that there are two types of data, the one is sine 
+
 ### Standard RNN EncoderDecoder
+
+#### Feature Num
 
 ### Sparse RNN EncoderDecoder
 
