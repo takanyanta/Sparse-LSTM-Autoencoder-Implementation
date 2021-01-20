@@ -18,6 +18,19 @@ Using LSTM autoencoder, L1 Regularization
 
 ![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/SeriesLengthData.png "process1")
 
+```python
+    def create_dataset(self, X, y, time_steps=1):
+        self.X = X
+        self.y = y
+        self.Xs, self.ys = [], []
+        self.time_steps = time_steps
+        for self.i in range(len(self.X) - self.time_steps):
+            self.v = self.X.iloc[self.i:(self.i + self.time_steps)].values
+            self.Xs.append(self.v)        
+            self.ys.append(self.y.iloc[self.i + self.time_steps])
+        return np.array(self.Xs), np.array(self.ys)
+```
+
 * At first, define "Standard RNN EncoderDecoder", then define "Sparse RNN Encoder-Decoder".
 * Sparse RNN Encoder-Decoder is built by adding some changes to Standard RNN EncoderDecoder as below;
    * Flatten the input
@@ -25,15 +38,65 @@ Using LSTM autoencoder, L1 Regularization
    * Reshape the 2. output
 
 * Structure of Standard RNN EncoderDecoder
- 
+
+```python
+def Usual_LSTM(X):
+    hidden = 5
+    timesteps=X.shape[1]
+    num_features=X.shape[2]
+    model = Sequential([
+        LSTM(hidden, input_shape=(timesteps, num_features)),
+        RepeatVector(timesteps),
+        LSTM(hidden, return_sequences=True),
+        TimeDistributed(Dense(num_features))                 
+    ])
+    model.summary()
+    model.compile(loss='mse', optimizer='adam')
+    return model
+```
+
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
 | 1 | LSTM | (None, l, k) | (None, h) |
 | 2 | RepeatVector | (None, h) | (None, l, h) |
 | 3 | LSTM | (None, l, h) | (None, l, h) |
 | 4 | TimeDistributed | (None, l, h) | (None, l ,k) |
+
 * Structure of Sparse RNN Encoder-Decoder
-   
+
+```python
+class MyLayer(tf.keras.layers.Layer):
+    def __init__(self, units):
+        super().__init__()
+        self.units = units
+    def build(self, input_shape):
+        self.kernel = self.add_weight(
+        "kernel", shape=[1, self.units],
+        initializer='uniform', trainable=True,
+        regularizer = tf.keras.regularizers.l1(0.001)
+        )
+    def call(self, input):
+        output = input*self.kernel
+        return tf.nn.relu(output) 
+
+def Sparse_LSTM(X):
+    hidden = 5
+    timesteps=X.shape[1]
+    num_features=X.shape[2]
+    model = Sequential([
+        Flatten(input_shape=(timesteps, num_features)),
+        MyLayer(timesteps*num_features),
+        Reshape(target_shape=(timesteps, num_features)),
+        LSTM(hidden, input_shape=(timesteps, num_features)),
+        RepeatVector(timesteps),
+        LSTM(hidden, return_sequences=True),
+        TimeDistributed(Dense(num_features))    
+    ])
+    model.compile( loss="mse", optimizer='adam')
+    model.summary()
+    return model
+```
+
 | Seq | Layer | Input Shape | Output Shape |
 ----|----|----|----
 | 1 | Flatten | (None, l, k)| (None, l&times;k) |
@@ -46,6 +109,9 @@ Using LSTM autoencoder, L1 Regularization
 
 ## Results
 
+### Standard RNN EncoderDecoder
+
+### Sparse RNN EncoderDecoder
 
 ## Conclustion
 
