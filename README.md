@@ -131,9 +131,6 @@ def Sparse_LSTM(X):
         plt.legend()
         plt.show()
 ```
-* Sample of the Relu Output of Sparse RNN
-
-![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/Activate.png "process1")
 
 * How to compute Mahalanobis Distance
 ```python
@@ -145,6 +142,11 @@ def compute_mahalanobis(model, X_train, X_test):
     temp_reshape = test_error.reshape(-1, test_error.shape[-1])
     return np.mean(np.array([distance.mahalanobis(mean, temp_reshape[i], cov) for i in range(len(temp_reshape))]).reshape(-1, X_train.shape[1]), axis=1)
 ```
+
+* Relu Output of Sparse RNN(Sample)
+partial input equal to zero
+
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/Activate.png "process1")
 
 ### Standard RNN
 
