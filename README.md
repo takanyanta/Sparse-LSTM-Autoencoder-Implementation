@@ -143,7 +143,7 @@ def compute_mahalanobis(model, X_train, X_test):
     return np.mean(np.array([distance.mahalanobis(mean, temp_reshape[i], cov) for i in range(len(temp_reshape))]).reshape(-1, X_train.shape[1]), axis=1)
 ```
 
-### Standard RNN EncoderDecoder
+### Standard RNN
 
 #### Case(1)
 
@@ -157,7 +157,7 @@ def compute_mahalanobis(model, X_train, X_test):
 |---|---|
 |![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/LH_F5_Standard.png "process1")|![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/MD_F5_Standard.png "process1")|
 
-### Sparse RNN EncoderDecoder
+### Sparse RNN
 
 #### Case(1)
 
@@ -173,3 +173,6 @@ def compute_mahalanobis(model, X_train, X_test):
 
 ## Conclustion
 
+* Both results are almost same. But in Case(2), Standard RNN could not capture the F1 acsending trend(seen in Case(1)), which is caused by sine wave.
+* Sparse RNN seems to be able to capture above trend, so it might have the ability to eliminate the effect of strong correlation among features to some extent.
+* Sparse RNN seems that it could not learn well at first, so it should be noted that the patience of EarlyStopping has to be set as a somewhat higher number.
