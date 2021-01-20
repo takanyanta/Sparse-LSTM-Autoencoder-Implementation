@@ -111,13 +111,33 @@ def Sparse_LSTM(X):
 
 * Assume that there are two types of data, the one is sine wave with noise(F1), and the other is normal random number with noise(F2).
 ![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/sine_normal.png "process1")
-* Assume two case, (1)[F1, F2], (2)[F1, F2, F2, F2, F2]
+* Assume two case, (1)[F1, F2](features are both independent), (2)[F1, F2, F2, F2, F2](partical Features are not independent)
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/correlation.png "process1")
+* Create train data with former 10,000 records, and define latter 5,000 records as test data.
 
 ### Standard RNN EncoderDecoder
 
-#### Feature Num
+#### Case(1)
+* Learning history
+
+* Mahalanobis Distance(=Anomaly Index)
+
+#### Case(2)
+* Learning history
+
+* Mahalanobis Distance(=Anomaly Index)
 
 ### Sparse RNN EncoderDecoder
+
+#### Case(1)
+* Learning history
+
+* Mahalanobis Distance(=Anomaly Index)
+
+#### Case(2)
+* Learning history
+
+* Mahalanobis Distance(=Anomaly Index)
 
 ## Conclustion
 
