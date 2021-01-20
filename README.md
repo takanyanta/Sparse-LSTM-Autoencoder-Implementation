@@ -124,24 +124,40 @@ def Sparse_LSTM(X):
 #### Case(1)
 * Learning history
 
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/LH_F2_Standard.png "process1")
+
 * Mahalanobis Distance(=Anomaly Index)
+
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/MD_F2_Standard.png "process1")
 
 #### Case(2)
 * Learning history
 
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/LH_F5_Standard.png "process1")
+
 * Mahalanobis Distance(=Anomaly Index)
+
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/MD_F5_Standard.png "process1")
 
 ### Sparse RNN EncoderDecoder
 
 #### Case(1)
 * Learning history
 
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/LH_F2_Sparse.png "process1")
+
 * Mahalanobis Distance(=Anomaly Index)
+
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/MD_F2_Sparse.png "process1")
 
 #### Case(2)
 * Learning history
 
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/LH_F5_Sparse.png "process1")
+
 * Mahalanobis Distance(=Anomaly Index)
+
+![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/MD_F5_Sparse.png "process1")
 
 ## Conclustion
 
