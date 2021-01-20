@@ -8,7 +8,7 @@ Using LSTM autoencoder, L1 Regularization
 * To avoid the above problem, the technique to apply L1 regularization to LSTM autoencoder is advocated in the below paper.
 >*N. Gugulothu, P. Malhotra, L. Vig, and G. Shroff, “[Sparse neural networks for anomaly detection in high-dimensional time series](https://www.researchgate.net/profile/Pankaj_Malhotra3/publication/326305246_Sparse_Neural_Networks_for_Anomaly_Detection_in_High-Dimensional_Time_Series/links/5b59f633aca272a2d66cbb98/Sparse-Neural-Networks-for-Anomaly-Detection-in-High-Dimensional-Time-Series.pdf),” in AI4IOT Workshop in Conjunction with ICML, International Joint Conference on Artificial Intelligence and European Conference on Artificial Intelligence, Stockholm, Sweden, 2018.*
 ![Extract the frame](https://github.com/takanyanta/Try-Sparse-LSTM-Autoencoder/blob/main/paper.png "process1")
-* The point is to use L1 regularization at the second layer of sequence model(right under the input data).
+* The point is to use L1 regularization at the second layer of the sequence model(right under the input data).
 
 ## Algorithm and How to implement
 
@@ -179,6 +179,6 @@ partial input equal to zero
 
 ## Conclustion
 
-* Both results are almost same. But in Case(2), Standard RNN could not capture the F1 acsending trend(seen in Case(1)), which is caused by sine wave.
-* Sparse RNN seems to be able to capture above trend, so it might have the ability to eliminate the effect of strong correlation among features to some extent.
+* Both results are almost the same. But in Case(2), Standard RNN could not capture the F1 ascending trend(seen in Case(1)), which is caused by sine wave.
+* Sparse RNN seems to be able to capture the above trend, so it might have the ability to eliminate the effect of strong correlation among features to some extent.
 * Sparse RNN seems that it could not learn well at first, so it should be noted that the patience of EarlyStopping has to be set as a somewhat higher number.
